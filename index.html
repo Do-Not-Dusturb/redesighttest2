@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A creative space for game lovers">
+    <meta name="keywords" content="games, fun, play, Nintendoboi222">
+    <meta name="author" content="Nintendoboi2">
+    <meta name="google-site-verification" content="YBxu1oXGxtgtTUo7KK-Aj3JuXtdiuteRGDbEvXvfAE0">
+    <title>Welcome to the Game Zone</title>
+    <link rel="icon" href="images/favicon.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Oxanium', sans-serif;
+            background: linear-gradient(135deg, #4f4f9f, #222222);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        h1 {
+            font-size: 3rem;
+            color: #f7ff3c;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        h2 {
+            color: #ffd700;
+            font-size: 2rem;
+        }
+        .search-bar {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            width: 60%;
+            max-width: 500px;
+            font-size: 1rem;
+            color: #333;
+        }
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 10px;
+        }
+        .game-box {
+            background-color: #333;
+            border-radius: 12px;
+            padding: 20px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .game-box:hover {
+            transform: translateY(-5px);
+            background-color: #555;
+        }
+        a {
+            text-decoration: none;
+            color: #f7ff3c;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        footer {
+            background-color: #111;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+        footer a:hover {
+            color: #f7ff3c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Game Zone</h1>
+    <h2>Your Next Game Adventure Awaits!</h2>
+    <input type="text" class="search-bar" placeholder="Search games..." onkeyup="searchGames()">
+</header>
+
+<div class="game-container">
+    <a href="https://nintendoboi222.github.io/games/volley-random" target="_blank">
+        <div class="game-box">Volly Random</div>
+    </a>
+    <a href="https://nintendoboi222.github.io/games/wheely-1" target="_blank">
+        <div class="game-box">Wheely 1</div>
+    </a>
+    <a href="https://nintendoboi222.github.io/games/10-minutes-till-dawn" target="_blank">
+        <div class="game-box">10 Minutes Until Dawn</div>
+    </a>
+    <a href="https://nintendoboi222.github.io/games/2048" target="_blank">
+        <div class="game-box">2048</div>
+    </a>
+    <a href="https://nintendoboi222.github.io/games/2MinuteFootball" target="_blank">
+        <div class="game-box">2 Minute Football</div>
+    </a>
+</div>
+
+<footer>
+    <a href="https://nintendoboi222.github.io/licence-stuff/contact" target="_blank">Contact</a>
+    <a href="https://github.com/Nintendoboi22" target="_blank">Main GitHub</a>
+    <a href="https://nintendoboi222.github.io/licence-stuff/PrivatePolicy" target="_blank">Privacy Policy</a>
+    <a href="https://discord.gg/KAxqmAjTsm" target="_blank">Join the Discord</a>
+</footer>
+
+<script>
+    function searchGames() {
+        const input = document.querySelector('.search-bar');
+        const filter = input.value.toUpperCase();
+        const games = document.querySelectorAll('.game-box');
+        games.forEach(game => {
+            const gameName = game.innerText;
+            if (gameName.toUpperCase().includes(filter)) {
+                game.style.display = '';
+            } else {
+                game.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
